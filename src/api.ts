@@ -35,6 +35,8 @@ export interface Api {
   // put a new piece on the board
   newPiece(piece: cg.Piece, key: cg.Key): void;
 
+  setExtraColorSquare(key: cg.Key[]): void;
+
   // play the current premove, if any; returns true if premove was played
   playPremove(): boolean;
 
@@ -99,6 +101,15 @@ export function start(state: State, redrawAll: cg.Redraw): Api {
       anim(state => board.setPieces(state, pieces), state);
     },
 
+    setExtraColorSquare(key: cg.Key[]) {
+      if (state.extraColorSquares && key && key != null) {
+        state.extraColorSquares = key
+      } else {
+        state.extraColorSquares = []
+      }
+      state.dom.redraw();
+    },
+
     selectSquare(key, force): void {
       if (key) anim(state => board.selectSquare(state, key, force), state);
       else if (state.selected) {
@@ -112,7 +123,7 @@ export function start(state: State, redrawAll: cg.Redraw): Api {
     },
 
     newPiece(piece, key): void {
-      anim(state => board.baseNewPiece(state, piece, key), state);
+      anim(state => board.baseNewPiece(state, piece, key, true), state);
     },
 
     playPremove(): boolean {

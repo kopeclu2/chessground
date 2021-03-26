@@ -10,7 +10,8 @@ export interface HeadlessState {
   orientation: cg.Color; // board orientation. white | black
   turnColor: cg.Color; // turn to play. white | black
   check?: cg.Key; // square currently in check "a2"
-  lastMove?: cg.Key[]; // squares part of the last move ["c3"; "c4"]
+  lastMove?: cg.Key[];// squares part of the last move ["c3"; "c4"]
+  extraColorSquares?: cg.Key[];
   selected?: cg.Key; // square currently selected "a1"
   coordinates: boolean; // include coords attributes
   autoCastle: boolean; // immediately complete the castle by moving the rook after king move
@@ -108,6 +109,7 @@ export function defaults(): HeadlessState {
     orientation: 'white',
     turnColor: 'white',
     coordinates: true,
+    extraColorSquares: [],
     autoCastle: true,
     viewOnly: false,
     disableContextMenu: false,

@@ -122,6 +122,10 @@ export function baseNewPiece(state: HeadlessState, piece: cg.Piece, key: cg.Key,
   callUserFunction(state.events.change);
   state.movable.dests = undefined;
   state.turnColor = opposite(state.turnColor);
+  console.log("EXTRA ")
+
+  if (state.extraColorSquares)
+    state.extraColorSquares = [key]
   return true;
 }
 

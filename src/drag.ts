@@ -129,11 +129,15 @@ function processDrag(s: State): void {
           found.classList.add('dragging');
           cur.element = found;
         }
-
         const bounds = s.dom.bounds();
+
+        const posX = cur.pos[0] - bounds.left - bounds.width / 16;
+        const posY =  cur.pos[1] - bounds.top - bounds.height / 16;
+
+
         util.translateAbs(cur.element, [
-          cur.pos[0] - bounds.left - bounds.width / 16,
-          cur.pos[1] - bounds.top - bounds.height / 16,
+          posX,
+          posY,
         ]);
       }
     }

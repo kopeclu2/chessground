@@ -213,6 +213,10 @@ function computeSquareClasses(s: State): SquareClasses {
       addSquare(squares, k, 'last-move');
     }
   if (s.check && s.highlight.check) addSquare(squares, s.check, 'check');
+  if (s.extraColorSquares)
+    for (const sq of s.extraColorSquares) {
+      addSquare(squares, sq, 'last-move')
+    }
   if (s.selected) {
     addSquare(squares, s.selected, 'selected');
     if (s.movable.showDests) {
