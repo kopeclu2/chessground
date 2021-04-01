@@ -1,6 +1,6 @@
 {
-  "name": "chessground",
-  "version": "7.11.1",
+  "name": "chessground-kopeclu2",
+  "version": "0.0.2",
   "description": "lichess.org chess ui",
   "type": "commonjs",
   "main": "chessground.js",
@@ -43,7 +43,7 @@
     "ui",
     "typescript"
   ],
-  "author": "Thibault Duplessis (https://github.com/ornicar)",
+  "author": "Kopecky lukas(https://github.com/kopeclu2)",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/kopeclu2/chessground/issues"
