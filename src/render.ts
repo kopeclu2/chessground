@@ -215,7 +215,7 @@ function computeSquareClasses(s: State): SquareClasses {
   if (s.check && s.highlight.check) addSquare(squares, s.check, 'check');
   if (s.extraColorSquares)
     for (const sq of s.extraColorSquares) {
-      addSquare(squares, sq, 'on-drag-drop')
+      addSquare(squares, sq, 'last-move')
     }
   if (s.selected) {
     addSquare(squares, s.selected, 'selected');
